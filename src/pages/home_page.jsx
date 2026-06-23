@@ -1,3 +1,12 @@
+import AutoCarousel from "../components/carousel";
+
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <div>
+        {/* carousel */}
+        <AutoCarousel />
+      </div>
+    </>
+  );
 }

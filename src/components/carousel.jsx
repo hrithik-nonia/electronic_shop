@@ -1,25 +1,9 @@
 import { useState, useEffect } from "react";
+import ban1 from "../assets/banner_img/ban-1.avif";
+import ban2 from "../assets/banner_img/ban-2.avif";
+import ban3 from "../assets/banner_img/ban-3.avif";
 
-const slides = [
-  {
-    id: 1,
-    label: "Summer Sale",
-    sub: "Up to 50% off on all electronics",
-    color: "bg-blue-600",
-  },
-  {
-    id: 2,
-    label: "New Arrivals",
-    sub: "Check out the latest iPhone 13 series",
-    color: "bg-purple-600",
-  },
-  {
-    id: 3,
-    label: "Free Shipping",
-    sub: "On all orders over $50",
-    color: "bg-green-600",
-  },
-];
+const slides = [ban1, ban2, ban3];
 
 export default function AutoCarousel() {
   const [index, setIndex] = useState(0);
@@ -33,18 +17,38 @@ export default function AutoCarousel() {
 
   return (
     <div className="w-full">
-      <div className="relative overflow-hidden bg-gray-100 h-72">
-        {slides.map((slide, i) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 flex flex-col items-center justify-center gap-2 ${slide.color} transition-opacity duration-700 ${
-              i === index ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <span className="text-white text-2xl font-bold">{slide.label}</span>
-            <span className="text-white/80 text-sm">{slide.sub}</span>
-          </div>
-        ))}
+      <div className="relative overflow-hidden bg-gray-100 ">
+        {/* Image */}
+        <div className="relative overflow-hidden rounded-lg">
+          <img
+            src={slides[index]}
+            alt={`Slide ${index + 1}`}
+            className=" w-full lg:h-full min-h-[400px] object-cover transition-all duration-500"
+          />
+        </div>
+
+        {/* text on the carousal */}
+        <div className=" absolute inset-0 w-1/3 top-[15%] left-[15%]">
+          {/* Badge */}
+          <span className="inline-block self-start bg-red-600 text-white text-xs lg:text-sm font-medium px-3 py-1.5 rounded-sm mb-6">
+            Best Prices
+          </span>
+
+          {/* Heading */}
+          <h1 className="text-3xl lg:text-5xl font-extrabold text-stone-900 leading-tight tracking-tight">
+            Incredible Prices on All Your Favorite Items
+          </h1>
+
+          {/* Subtext */}
+          <p className="mt-4 text-sm lg:text-base text-stone-700">
+            Get more for less on selected brands
+          </p>
+
+          {/* CTA */}
+          <button className="mt-6 self-start bg-violet-600 border border-violet-600 hover:bg-transparent hover:text-violet-600 transition-colors duration-300 text-white font-medium px-7 py-3 rounded-full">
+            Shop Now
+          </button>
+        </div>
       </div>
 
       {/* Dots */}

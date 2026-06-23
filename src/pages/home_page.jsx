@@ -3,6 +3,7 @@ import AutoCarousel from "../components/carousel";
 import section1_ban1 from "../assets/section1-ban.avif";
 import section1_ban2 from "../assets/section1-ban2.avif";
 import section4_ban from "../assets/section4-ban.avif";
+import section8_ban from "../assets/section8_ban.avif";
 // logoes for sections
 import { Truck, PackageCheck, Percent, RotateCw } from "lucide-react";
 
@@ -250,6 +251,7 @@ export default function Home() {
                       outline-none
                       text-white
                       placeholder:text-white/60
+                      py-3.5
                     "
                     />
 
@@ -277,13 +279,13 @@ export default function Home() {
                     <input
                       type="checkbox"
                       className="
-                h-5
-                w-5
-                border
-                border-white
-                bg-transparent
-                accent-white
-              "
+                      h-5
+                      w-5
+                      border
+                      border-white
+                      bg-transparent
+                      accent-white
+                    "
                     />
                     <span className="text-xl">
                       Yes, subscribe me to your newsletter. *
@@ -293,7 +295,54 @@ export default function Home() {
               </div>
             </section>
           </section>
-          {/* section 8 */}
+        </section>
+
+        {/* section 8 */}
+        <section className="relative min-h-[500px] overflow-hidden mt-20">
+          {/* Image */}
+          <img
+            src={section8_ban}
+            alt={`${section8_ban} banner`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Left Black Panel */}
+          <div
+            className="
+            absolute
+            left-0
+            top-0
+            h-full
+            w-full
+            lg:w-[55%]
+            bg-black
+            text-white
+            flex
+            items-center
+            px-8
+            lg:px-20
+          "
+            style={{
+              clipPath: "polygon(0 0, 82% 0, 92% 100%, 0 100%)",
+            }}
+          >
+            <div className="max-w-md">
+              <h2 className="text-5xl font-bold leading-tight">
+                Need Help? Check
+                <br />
+                Out Our Help Center
+              </h2>
+
+              <p className="mt-8 text-lg leading-9">
+                I'm a paragraph. Click here to add your own text and edit me.
+                Let your users get to know you.
+              </p>
+
+              <button className="mt-10 bg-white hover:bg-[#7c3aed] hover:text-white border border-[#7c3aed] text-[#7C3AED] px-10 py-4 rounded-full text-xl transition-colors duration-300">
+                Go to Help Center
+              </button>
+            </div>
+          </div>
         </section>
       </section>
     </>

@@ -11,7 +11,7 @@ export default function AutoCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((i) => (i === slides.length - 1 ? 0 : i + 1));
-    }, 3000);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -28,9 +28,9 @@ export default function AutoCarousel() {
         </div>
 
         {/* text on the carousal */}
-        <div className=" absolute inset-0 w-1/3 top-[15%] left-[15%]">
+        <div className=" absolute inset-0 lg:w-1/3 w-[80%] top-[15%] md:left-[15%] pl-5">
           {/* Badge */}
-          <span className="inline-block self-start bg-red-600 text-white text-xs lg:text-sm font-medium px-3 py-1.5 rounded-sm mb-6">
+          <span className="inline-block self-start bg-red-600 text-white text-xs lg:text-sm font-medium px-3 py-1.5 rounded-sm md:mb-6 mb-3">
             Best Prices
           </span>
 
@@ -45,7 +45,7 @@ export default function AutoCarousel() {
           </p>
 
           {/* CTA */}
-          <button className="mt-6 self-start bg-violet-600 border border-violet-600 hover:bg-transparent hover:text-violet-600 transition-colors duration-300 text-white font-medium px-7 py-3 rounded-full">
+          <button className="mt-6 self-start bg-violet-600 border border-violet-600 hover:bg-transparent hover:text-violet-600 transition-colors duration-300 text-white font-medium md:px-7 md:py-3 py-1.5 px-3 rounded-full">
             Shop Now
           </button>
         </div>

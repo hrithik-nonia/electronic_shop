@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import ban1 from "../assets/banner_img/ban-1.avif";
 import ban2 from "../assets/banner_img/ban-2.avif";
 import ban3 from "../assets/banner_img/ban-3.avif";
+// common button for banner
+import CommonBtn from "./common_btn";
 
 const slides = [ban1, ban2, ban3];
 
@@ -45,9 +47,7 @@ export default function AutoCarousel() {
           </p>
 
           {/* CTA */}
-          <button className="mt-6 self-start bg-violet-600 border border-violet-600 hover:bg-transparent hover:text-violet-600 transition-colors duration-300 text-white font-medium md:px-7 md:py-3 py-1.5 px-3 rounded-full">
-            Shop Now
-          </button>
+          <CommonBtn text={"shop now"} />
         </div>
       </div>
 

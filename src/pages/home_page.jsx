@@ -1,11 +1,15 @@
 import AutoCarousel from "../components/carousel";
-// images for section 1
+// images for sections
 import section1_ban1 from "../assets/section1-ban.avif";
 import section1_ban2 from "../assets/section1-ban2.avif";
-
-// logos for section 2
+import section4_ban from "../assets/section4-ban.avif";
+// logoes for sections
 import { Truck, PackageCheck, Percent, RotateCw } from "lucide-react";
 
+import Product_section from "../components/product_section";
+import CommonBtn from "../components/common_btn";
+
+// --------------------------------
 export default function Home() {
   // content for section 1
   const bannerContent = [
@@ -46,6 +50,7 @@ export default function Home() {
       subtitle: "you 24/7",
     },
   ];
+
   return (
     <>
       <section className="bg-gray-200">
@@ -96,6 +101,120 @@ export default function Home() {
           </section>
 
           {/* section 3 */}
+          <Product_section />
+
+          {/* section 4 */}
+          <section className="mt-10">
+            <div className="bg-white text-center text-3xl font-semibold py-25 mb-3">
+              Shop by Category
+            </div>
+
+            {/* ------------- */}
+            <div className="relative w-full overflow-hidden ">
+              {/* image */}
+              <img
+                src={section4_ban}
+                alt={`${section4_ban} banner`}
+                className="h-[200px] lg:h-full"
+              />
+
+              {/* Left section - red background (image placeholder), diagonal cut */}
+              <div
+                className="absolute z-10 inset-y-0 lg:right-0 w-[45%] bg-white "
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 25% 100%)",
+                }}
+              />
+
+              {/* Best Price badge - sits on the diagonal cut */}
+              <div className=" absolute left-[52%] top-12 z-10 flex h-36 w-36 items-center justify-center rounded-full bg-red-600 text-center shadow-lg">
+                <span className="text-xl font-bold leading-tight text-white">
+                  Best
+                  <br />
+                  Price
+                </span>
+              </div>
+
+              {/* Right section - text content */}
+              <div className=" absolute top-0 right-0 z-20 flex h-full w-[40%] flex-col justify-center px-12 lg:px-20 ">
+                <p className="text-2xl font-semibold text-stone-900">
+                  Save up to
+                </p>
+
+                <p className="mt-2 text-7xl font-extrabold text-stone-900 leading-none">
+                  $150
+                </p>
+
+                <p className="mt-6 text-2xl font-bold text-stone-900 leading-snug">
+                  on selected laptop
+                  <br />& tablets brands
+                </p>
+
+                <p className="mt-3 text-sm text-stone-600">
+                  Terms and conditions apply
+                </p>
+
+                <CommonBtn text={"shop"} />
+              </div>
+            </div>
+          </section>
+
+          {/* section 5 */}
+          <Product_section />
+
+          {/* section 6 */}
+          <section className="w-full overflow-hidden bg-white mt-10">
+            <div className="relative h-[600px] flex">
+              {/* Left Content */}
+              <div
+                className="relative z-10 w-full lg:w-[45%] bg-[#ffffff] flex flex-col justify-center px-8 lg:px-16"
+                style={{
+                  clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)",
+                }}
+              >
+                <span className="inline-block bg-red-600 text-white text-sm px-3 py-1 w-fit">
+                  Today's Special
+                </span>
+
+                <h2 className="mt-8 text-4xl lg:text-5xl font-bold text-black">
+                  Best Arial View in Town
+                </h2>
+
+                <div className="flex items-end gap-4 mt-8">
+                  <span className="text-7xl font-bold text-violet-600">
+                    30%
+                  </span>
+
+                  <span className="text-7xl font-bold text-black">OFF</span>
+                </div>
+
+                <h3 className="mt-6 text-2xl lg:text-3xl font-semibold text-black">
+                  on professional camera drones
+                </h3>
+
+                <p className="mt-8 text-gray-700">
+                  Limited quantities.
+                  <br />
+                  See product detail pages for availability.
+                </p>
+
+                <CommonBtn text={"shop"} />
+              </div>
+
+              {/* Right Image */}
+              <div className="absolute inset-0 lg:left-[35%]">
+                <img
+                  src="https://images.unsplash.com/photo-1473968512647-3e447244af8f"
+                  alt="Drone"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* section 7 */}
+
+          {/* section 8 */}
         </section>
       </section>
     </>

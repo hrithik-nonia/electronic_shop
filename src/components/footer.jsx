@@ -1,5 +1,6 @@
 import { CiFacebook, CiInstagram, CiTwitter, CiYoutube } from "react-icons/ci";
 import FooterLinks from "./footer_links";
+import PaymentMethods from "./payment_methods";
 
 const shopLinks = [
   { link: "/", text: "Shop All" },
@@ -38,49 +39,53 @@ const policy = [
 ];
 export default function Footer() {
   return (
-    <footer className="bg-[#f4f4f4] py-20 px-6 lg:px-20">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
-          {/* Store Location */}
-          <div>
-            <h3 className="text-xl font-semibold mb-10">Store Location</h3>
+    <>
+      <footer className="bg-[#f4f4f4] py-20 px-6 lg:px-20 ">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+            {/* Store Location */}
+            <div>
+              <h3 className="text-xl font-semibold mb-10">Store Location</h3>
 
-            <div className="space-y-2">
-              {storeLocation.map((text) => (
-                <p>{text}</p>
-              ))}
+              <div className="space-y-2">
+                {storeLocation.map((text) => (
+                  <p>{text}</p>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-5 mt-10">
+                <CiFacebook
+                  size={24}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+                <CiInstagram
+                  size={24}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+                <CiTwitter
+                  size={24}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+                <CiYoutube
+                  size={24}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+              </div>
             </div>
 
-            <div className="flex items-center gap-5 mt-10">
-              <CiFacebook
-                size={24}
-                className="cursor-pointer hover:scale-110 transition"
-              />
-              <CiInstagram
-                size={24}
-                className="cursor-pointer hover:scale-110 transition"
-              />
-              <CiTwitter
-                size={24}
-                className="cursor-pointer hover:scale-110 transition"
-              />
-              <CiYoutube
-                size={24}
-                className="cursor-pointer hover:scale-110 transition"
-              />
-            </div>
+            {/* Shop */}
+            <FooterLinks content={shopLinks} />
+
+            {/* Customer Support */}
+            <FooterLinks content={customerSupport} />
+
+            {/* Policy */}
+            <FooterLinks content={policy} />
           </div>
-
-          {/* Shop */}
-          <FooterLinks content={shopLinks} />
-
-          {/* Customer Support */}
-          <FooterLinks content={customerSupport} />
-
-          {/* Policy */}
-          <FooterLinks content={policy} />
         </div>
-      </div>
-    </footer>
+      </footer>
+      {/* payment methods shows here */}
+      <PaymentMethods />
+    </>
   );
 }

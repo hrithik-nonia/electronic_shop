@@ -55,7 +55,7 @@ export default function AutoCarousel() {
       <div className="flex items-center justify-center gap-2 mt-4">
         {slides.map((slide, i) => (
           <button
-            key={slide.id}
+            key={i}
             onClick={() => setIndex(i)}
             className={`h-2 rounded-full transition-all ${
               i === index ? "w-6 bg-gray-900" : "w-2 bg-gray-300"

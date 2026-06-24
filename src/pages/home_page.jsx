@@ -61,8 +61,8 @@ export default function Home() {
         <section className="md:px-10">
           {/* section 1 */}
           <section className="grid md:grid-cols-2 py-10 gap-10">
-            {bannerContent.map(({ img, h1, h2, h3 }) => (
-              <div className="relative w-full">
+            {bannerContent.map(({ img, h1, h2, h3 }, i) => (
+              <div className="relative w-full" key={i}>
                 <img
                   src={img}
                   alt={`${img} banner`}

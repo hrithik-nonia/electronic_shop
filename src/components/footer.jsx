@@ -1,5 +1,41 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { CiFacebook, CiInstagram, CiTwitter, CiYoutube } from "react-icons/ci";
+import FooterLinks from "./footer_links";
 
+const shopLinks = [
+  { link: "/", text: "Shop All" },
+  { link: "/", text: "Computers" },
+  { link: "/", text: "Tablets" },
+  { link: "/", text: "Drones & Cameras" },
+  { link: "/", text: "Audio" },
+  { link: "/", text: "Mobile" },
+  { link: "/", text: "T.V & Home Cinema" },
+  { link: "/", text: "Wearable Tech" },
+  { link: "/", text: "Sale" },
+];
+
+// store location
+const storeLocation = [
+  "500 Terry Francine Street",
+  "San Francisco, CA 94158",
+  "info@mysite.com",
+  "123-456-7890",
+];
+
+// customer support
+const customerSupport = [
+  { link: "/", text: "Contact Us" },
+  { link: "/", text: "Help Center" },
+  { link: "/", text: "About Us" },
+  { link: "/", text: "Careers" },
+];
+
+// policy
+const policy = [
+  { link: "/", text: "Shipping & Returns" },
+  { link: "/", text: "Terms & Conditions" },
+  { link: "/", text: "Payment Methods" },
+  { link: "/", text: "FAQ" },
+];
 export default function Footer() {
   return (
     <footer className="bg-[#f4f4f4] py-20 px-6 lg:px-20">
@@ -7,29 +43,28 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           {/* Store Location */}
           <div>
-            <h3 className="text-3xl font-semibold mb-10">Store Location</h3>
+            <h3 className="text-xl font-semibold mb-10">Store Location</h3>
 
-            <div className="space-y-4 text-lg">
-              <p>500 Terry Francine Street</p>
-              <p>San Francisco, CA 94158</p>
-              <p>info@mysite.com</p>
-              <p>123-456-7890</p>
+            <div className="space-y-2">
+              {storeLocation.map((text) => (
+                <p>{text}</p>
+              ))}
             </div>
 
             <div className="flex items-center gap-5 mt-10">
-              <Facebook
+              <CiFacebook
                 size={24}
                 className="cursor-pointer hover:scale-110 transition"
               />
-              <Instagram
+              <CiInstagram
                 size={24}
                 className="cursor-pointer hover:scale-110 transition"
               />
-              <Twitter
+              <CiTwitter
                 size={24}
                 className="cursor-pointer hover:scale-110 transition"
               />
-              <Youtube
+              <CiYoutube
                 size={24}
                 className="cursor-pointer hover:scale-110 transition"
               />
@@ -37,79 +72,13 @@ export default function Footer() {
           </div>
 
           {/* Shop */}
-          <div>
-            <h3 className="text-3xl font-semibold mb-10">Shop</h3>
-
-            <ul className="space-y-4 text-lg">
-              <li>
-                <a href="#">Shop All</a>
-              </li>
-              <li>
-                <a href="#">Computers</a>
-              </li>
-              <li>
-                <a href="#">Tablets</a>
-              </li>
-              <li>
-                <a href="#">Drones & Cameras</a>
-              </li>
-              <li>
-                <a href="#">Audio</a>
-              </li>
-              <li>
-                <a href="#">Mobile</a>
-              </li>
-              <li>
-                <a href="#">T.V & Home Cinema</a>
-              </li>
-              <li>
-                <a href="#">Wearable Tech</a>
-              </li>
-              <li>
-                <a href="#">Sale</a>
-              </li>
-            </ul>
-          </div>
+          <FooterLinks content={shopLinks} />
 
           {/* Customer Support */}
-          <div>
-            <h3 className="text-3xl font-semibold mb-10">Customer Support</h3>
-
-            <ul className="space-y-4 text-lg">
-              <li>
-                <a href="#">Contact Us</a>
-              </li>
-              <li>
-                <a href="#">Help Center</a>
-              </li>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Careers</a>
-              </li>
-            </ul>
-          </div>
+          <FooterLinks content={customerSupport} />
 
           {/* Policy */}
-          <div>
-            <h3 className="text-3xl font-semibold mb-10">Policy</h3>
-
-            <ul className="space-y-4 text-lg">
-              <li>
-                <a href="#">Shipping & Returns</a>
-              </li>
-              <li>
-                <a href="#">Terms & Conditions</a>
-              </li>
-              <li>
-                <a href="#">Payment Methods</a>
-              </li>
-              <li>
-                <a href="#">FAQ</a>
-              </li>
-            </ul>
-          </div>
+          <FooterLinks content={policy} />
         </div>
       </div>
     </footer>

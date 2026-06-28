@@ -9,6 +9,7 @@ import { Truck, PackageCheck, Percent, RotateCw } from "lucide-react";
 
 import Product_section from "../components/product_section";
 import CommonBtn from "../components/common_btn";
+import { getSaleProducts, getBestSellers } from "../api/product_api"; //take sale products
 
 // --------------------------------
 export default function Home() {
@@ -102,7 +103,7 @@ export default function Home() {
           </section>
 
           {/* section 3 */}
-          <Product_section />
+          <Product_section title="Best Sellers" fetchFn={getSaleProducts} />
 
           {/* section 4 */}
           <section className="mt-10">
@@ -161,7 +162,7 @@ export default function Home() {
           </section>
 
           {/* section 5 */}
-          <Product_section />
+          <Product_section title="On Sale" fetchFn={getBestSellers} />
 
           {/* section 6 */}
           <section className="w-full overflow-hidden bg-white mt-10">

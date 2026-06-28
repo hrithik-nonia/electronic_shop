@@ -48,8 +48,8 @@ export default function Footer() {
               <h3 className="text-xl font-semibold mb-10">Store Location</h3>
 
               <div className="space-y-2">
-                {storeLocation.map((text) => (
-                  <p>{text}</p>
+                {storeLocation.map((text, i) => (
+                  <p key={i}>{text}</p>
                 ))}
               </div>
 

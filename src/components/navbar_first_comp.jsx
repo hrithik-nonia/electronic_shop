@@ -1,6 +1,13 @@
 import { Package } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function AnnouncementBar() {
+  const navLinks = [
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+    { to: "/help", label: "Help Center" },
+    { to: "/call", label: "Call Us" },
+  ];
   return (
     <div className="w-full bg-black text-white px-10 md:py-5 py-2.5 flex items-center justify-between text-sm">
       {/* Left: shipping message */}
@@ -11,21 +18,15 @@ export default function AnnouncementBar() {
 
       {/* Right: links + phone */}
       <div className="lg:flex items-center gap-6 hidden">
-        <a href="#" className="underline hover:text-gray-300">
-          About
-        </a>
-        <a href="#" className="underline hover:text-gray-300">
-          Contact
-        </a>
-        <a href="#" className="underline hover:text-gray-300">
-          Help Center
-        </a>
-        <span className="flex items-center gap-1">
-          Call Us
-          <a href="tel:1234567890" className="underline hover:text-gray-300">
-            123-456-7890
-          </a>
-        </span>
+        {navLinks.map((link) => (
+          <NavLink
+            key={link.to}
+            to={link.to}
+            className="underline hover:text-gray-300"
+          >
+            {link.label}
+          </NavLink>
+        ))}
       </div>
     </div>
   );

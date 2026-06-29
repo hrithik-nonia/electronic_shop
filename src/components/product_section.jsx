@@ -14,7 +14,7 @@ export default function Product_section({ title, fetchFn }) {
   const sentinelRef = useRef(null);
   const observerRef = useRef(null);
 
-  // latest state ko ref mein rakho taaki stable callback ke andar bhi fresh value mile
+  // latest state ko ref mein rakha taaki stable callback ke andar bhi fresh value mile
   const stateRef = useRef({ hasMore, loading, skip });
   useEffect(() => {
     stateRef.current = { hasMore, loading, skip };

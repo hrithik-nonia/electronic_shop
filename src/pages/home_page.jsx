@@ -1,9 +1,11 @@
+// components import
 import AutoCarousel from "../components/carousel";
+import NewsLetterForm from "../components/news_letter_form";
+
 // images for sections
 import section1_ban1 from "../assets/section1-ban.avif";
 import section1_ban2 from "../assets/section1-ban2.avif";
 import section4_ban from "../assets/section4-ban.avif";
-import section8_ban from "../assets/section8_ban.avif";
 // logoes for sections
 import { Truck, PackageCheck, Percent, RotateCw } from "lucide-react";
 
@@ -55,7 +57,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="bg-gray-200">
+      <section className="bg-gray-200 lg:pb-20">
         {/* carousel */}
         <AutoCarousel />
 
@@ -103,7 +105,7 @@ export default function Home() {
           </section>
 
           {/* section 3 */}
-          <Product_section title="Best Sellers" fetchFn={getSaleProducts} />
+          <Product_section title="On Sale" fetchFn={getSaleProducts} />
 
           {/* section 4 */}
           <section className="mt-10">
@@ -162,7 +164,7 @@ export default function Home() {
           </section>
 
           {/* section 5 */}
-          <Product_section title="On Sale" fetchFn={getBestSellers} />
+          <Product_section title="All Products" fetchFn={getBestSellers} />
 
           {/* section 6 */}
           <section className="w-full overflow-hidden bg-white mt-10">
@@ -220,130 +222,8 @@ export default function Home() {
               Brands
             </div>
 
-            {/* main content */}
-            <section className="w-full bg-[#7B1FFF] py-16 px-6 md:px-10">
-              <div className="max-w-5xl mx-auto text-white">
-                {/* Heading */}
-                <div className="text-center">
-                  <h2 className="text-4xl font-bold">Newsletter</h2>
-                  <p className="mt-4 text-lg text-white/90">
-                    Sign up to receive updates on new arrivals and special
-                    offers
-                  </p>
-                </div>
-
-                {/* Form */}
-                <form className="mt-12">
-                  <label className="block text-lg mb-4">
-                    Email <span>*</span>
-                  </label>
-
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    <input
-                      type="email"
-                      placeholder=""
-                      className="
-                      flex-1
-                      h-14
-                      rounded-full
-                      border border-white
-                      bg-transparent
-                      px-6
-                      outline-none
-                      text-white
-                      placeholder:text-white/60
-                      py-3.5
-                    "
-                    />
-
-                    <button
-                      type="submit"
-                      className="
-                      h-14
-                      px-12
-                      rounded-full
-                      bg-black
-                      text-white
-                      text-lg
-                      hover:bg-transparent
-                      border-black
-                      border
-                      transition
-                    "
-                    >
-                      Subscribe
-                    </button>
-                  </div>
-
-                  {/* Checkbox */}
-                  <label className="mt-8 flex items-center gap-4 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="
-                      h-5
-                      w-5
-                      border
-                      border-white
-                      bg-transparent
-                      accent-white
-                    "
-                    />
-                    <span className="text-xl">
-                      Yes, subscribe me to your newsletter. *
-                    </span>
-                  </label>
-                </form>
-              </div>
-            </section>
+            <NewsLetterForm />
           </section>
-        </section>
-
-        {/* section 8 */}
-        <section className="relative min-h-[500px] overflow-hidden mt-20">
-          {/* Image */}
-          <img
-            src={section8_ban}
-            alt={`${section8_ban} banner`}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-
-          {/* Left Black Panel */}
-          <div
-            className="
-            absolute
-            left-0
-            top-0
-            h-full
-            w-full
-            lg:w-[55%]
-            bg-black
-            text-white
-            flex
-            items-center
-            px-8
-            lg:px-20
-          "
-            style={{
-              clipPath: "polygon(0 0, 82% 0, 92% 100%, 0 100%)",
-            }}
-          >
-            <div className="max-w-md">
-              <h2 className="text-5xl font-bold leading-tight">
-                Need Help? Check
-                <br />
-                Out Our Help Center
-              </h2>
-
-              <p className="mt-8 text-lg leading-9">
-                I'm a paragraph. Click here to add your own text and edit me.
-                Let your users get to know you.
-              </p>
-
-              <button className="mt-10 bg-white hover:bg-[#7c3aed] hover:text-white border border-[#7c3aed] text-[#7C3AED] px-10 py-4 rounded-full text-xl transition-colors duration-300">
-                Go to Help Center
-              </button>
-            </div>
-          </div>
         </section>
       </section>
     </>

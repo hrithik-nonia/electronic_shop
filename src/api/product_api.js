@@ -8,6 +8,7 @@ export const getSaleProducts = async (skip = 0, limit = 10) => {
   return response.data;
 };
 
-export const getBestSellers = () => {
-  return [];
+export const getBestSellers = async (skip = 0, limit = 10) => {
+  const response = await axios.get(`${BASE_URL}/?skip=${skip}&limit=${limit}`);
+  return response.data;
 }

@@ -8,9 +8,9 @@ const ContactPage = lazy(() => import("./pages/contact_page"));
 const FAQHelpCenter = lazy(() => import("./pages/help_center_page"));
 const SearchOverlay = lazy(() => import("./pages/search_page"));
 const Wishlist = lazy(() => import("./pages/wish_list_page"));
-const AllProducts = lazy(() => import("./pages/all_product_page"));
-const ComputerProducts = lazy(() => import("./pages/computer_product_page"));
-
+const ShowProductsByCategory = lazy(
+  () => import("./pages/filter_by_category_page"),
+);
 export default function App() {
   return (
     <>
@@ -23,8 +23,10 @@ export default function App() {
           <Route path="/help" element={<FAQHelpCenter />} />
           <Route path="/search" element={<SearchOverlay />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/all-products" element={<AllProducts />} />
-          <Route path="/computer-products" element={<ComputerProducts />} />
+          <Route
+            path="/filter-by-category/:category"
+            element={<ShowProductsByCategory />}
+          />
         </Routes>
       </Suspense>
       <Footer />

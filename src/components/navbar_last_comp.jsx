@@ -2,15 +2,15 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const categories = [
-  { name: "Shop All", path: "/all-products" },
-  { name: "Computers", path: "/computer-products" },
-  { name: "Tablets", path: "/tablets" },
-  { name: "Drones & Cameras", path: "/drones-cameras" },
-  { name: "Audio", path: "/audio" },
-  { name: "Mobile", path: "/mobile" },
-  { name: "T.V & Home Cinema", path: "/tv-home-cinema" },
-  { name: "Wearable Tech", path: "/wearable-tech" },
-  { name: "Sale", path: "/sale" },
+  { name: "Shop All", path: "/filter-by-category/All Products" },
+  { name: "Computers", path: "/filter-by-category/Computers" },
+  { name: "Tablets", path: "/filter-by-category/Tablets" },
+  { name: "Drones & Cameras", path: "/filter-by-category/Drones & Cameras" },
+  { name: "Audio", path: "/filter-by-category/Audio" },
+  { name: "Mobile", path: "/filter-by-category/Mobile" },
+  { name: "T.V & Home Cinema", path: "/filter-by-category/Tv Home Cinema" },
+  { name: "Wearable Tech", path: "/filter-by-category/Wearable Tech" },
+  { name: "Sale", path: "/filter-by-category/Sale" },
 ];
 
 export default function CategoryNav() {
@@ -21,6 +21,7 @@ export default function CategoryNav() {
       {categories.map(({ name, path }) => (
         <NavLink
           to={path}
+          state={{ category: name }}
           key={name}
           onClick={() => setActive(name)}
           className={`whitespace-nowrap font-normal ${

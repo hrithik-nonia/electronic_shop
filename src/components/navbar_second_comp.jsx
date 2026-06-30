@@ -2,9 +2,11 @@ import { Search, User, Heart, ShoppingCart } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import LoginCard from "./login_and_signup_form";
 import { useState } from "react";
+import CartPanel from "./cart_component";
 
 export default function Header() {
   const [showLoginCard, setShowLoginCard] = useState(false);
+  const [showCartPanel, setShowCartPanel] = useState(false);
 
   return (
     <>
@@ -36,11 +38,17 @@ export default function Header() {
           </button>
 
           {/* liked product option */}
-          <button className="text-gray-700 hover:text-gray-900 hidden lg:flex">
+          <NavLink
+            to="/wishlist"
+            className="text-gray-700 hover:text-gray-900 hidden lg:flex"
+          >
             <Heart className="w-5 h-5" strokeWidth={1.8} />
-          </button>
+          </NavLink>
 
-          <button className="relative text-gray-700 hover:text-gray-900">
+          <button
+            className="relative text-gray-700 hover:text-gray-900"
+            onClick={() => setShowCartPanel(true)}
+          >
             <ShoppingCart className="w-5 h-5" strokeWidth={1.8} />
             <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] leading-none font-medium rounded-full w-4 h-4 flex items-center justify-center">
               0
@@ -51,6 +59,9 @@ export default function Header() {
 
       {/* Login Card */}
       {showLoginCard && <LoginCard onClose={() => setShowLoginCard(false)} />}
+
+      {/* Cart Panel */}
+      {showCartPanel && <CartPanel onClose={() => setShowCartPanel(false)} />}
     </>
   );
 }

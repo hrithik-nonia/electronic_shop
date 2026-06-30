@@ -101,22 +101,48 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-5 mt-10">
-                <CiFacebook
-                  size={24}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
-                <CiInstagram
-                  size={24}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
-                <CiTwitter
-                  size={24}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
-                <CiYoutube
-                  size={24}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CiFacebook
+                    size={24}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
+
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CiInstagram
+                    size={24}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
+
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CiTwitter
+                    size={24}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CiYoutube
+                    size={24}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
               </div>
             </div>
 

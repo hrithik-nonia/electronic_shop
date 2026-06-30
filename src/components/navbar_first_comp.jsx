@@ -6,7 +6,6 @@ export default function AnnouncementBar() {
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
     { to: "/help", label: "Help Center" },
-    { to: "/call", label: "Call Us" },
   ];
   return (
     <div className="w-full bg-black text-white px-10 md:py-5 py-2.5 flex items-center justify-between text-sm">
@@ -27,6 +26,17 @@ export default function AnnouncementBar() {
             {link.label}
           </NavLink>
         ))}
+
+        {/* contact number */}
+        <div>
+          <span>Call</span>
+          <button
+            className="ml-2 underline hover:text-gray-300"
+            onClick={() => alert("Calling +1 (555) 123-4567")}
+          >
+            +1 (555) 123-4567
+          </button>
+        </div>
       </div>
     </div>
   );

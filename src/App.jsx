@@ -6,6 +6,7 @@ const Home = lazy(() => import("./pages/home_page"));
 const AboutPage = lazy(() => import("./pages/about_page"));
 const ContactPage = lazy(() => import("./pages/contact_page"));
 const FAQHelpCenter = lazy(() => import("./pages/help_center_page"));
+const SearchOverlay = lazy(() => import("./pages/search_page"));
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/help" element={<FAQHelpCenter />} />
+          <Route path="/search" element={<SearchOverlay />} />
         </Routes>
       </Suspense>
       <Footer />

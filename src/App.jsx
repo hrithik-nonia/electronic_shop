@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/scroll_to_top";
 const Home = lazy(() => import("./pages/home_page"));
 const AboutPage = lazy(() => import("./pages/about_page"));
 const ContactPage = lazy(() => import("./pages/contact_page"));
@@ -11,9 +12,11 @@ const Wishlist = lazy(() => import("./pages/wish_list_page"));
 const ShowProductsByCategory = lazy(
   () => import("./pages/filter_by_category_page"),
 );
+const ProductDetail = lazy(() => import("./pages/selected_product_page"));
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
@@ -27,6 +30,7 @@ export default function App() {
             path="/filter-by-category/:category"
             element={<ShowProductsByCategory />}
           />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </Suspense>
       <Footer />

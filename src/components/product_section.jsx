@@ -1,6 +1,7 @@
 import CommonBtn from "./common_btn";
 import ProductCard from "./product_card";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Link } from "react-router-dom";
 
 export default function Product_section({ title, fetchFn }) {
   const LIMIT = 10;
@@ -83,7 +84,9 @@ export default function Product_section({ title, fetchFn }) {
           ref={scrollContainerRef}
         >
           {products.map((product) => (
-            <ProductCard product={product} key={product.id} />
+            <Link to={`/product/${product.id}`} key={product.id}>
+              <ProductCard product={product} />
+            </Link>
           ))}
           <div ref={sentinelRef} className="w-1 shrink-0" />
         </div>

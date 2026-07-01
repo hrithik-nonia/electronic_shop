@@ -1,6 +1,8 @@
 // components import
 import AutoCarousel from "../components/carousel";
 import NewsLetterForm from "../components/news_letter_form";
+import Product_section from "../components/product_section";
+import CommonBtn from "../components/common_btn";
 
 // images for sections
 import section1_ban1 from "../assets/section1-ban.avif";
@@ -9,9 +11,11 @@ import section4_ban from "../assets/section4-ban.avif";
 // logoes for sections
 import { Truck, PackageCheck, Percent, RotateCw } from "lucide-react";
 
-import Product_section from "../components/product_section";
-import CommonBtn from "../components/common_btn";
+// api imports
 import { getSaleProducts, getBestSellers } from "../api/product_api"; //take sale products
+
+// react imports
+import { NavLink } from "react-router-dom";
 
 // --------------------------------
 export default function Home() {
@@ -22,12 +26,14 @@ export default function Home() {
       h1: "Up to 30% off",
       h2: "Holiday Deals",
       h3: "Selected Smartphone Brands ",
+      link: "/filter-by-category/Mobile",
     },
     {
       img: section1_ban2,
       h1: "Take Your Sound Anywhere",
       h2: "Just In",
       h3: "Top Headphone Brands",
+      link: "/filter-by-category/Wearable%20Tech",
     },
   ];
 
@@ -64,7 +70,7 @@ export default function Home() {
         <section className="md:px-10">
           {/* section 1 */}
           <section className="grid md:grid-cols-2 py-10 gap-10">
-            {bannerContent.map(({ img, h1, h2, h3 }, i) => (
+            {bannerContent.map(({ img, h1, h2, h3, link }, i) => (
               <div className="relative w-full" key={i}>
                 <img
                   src={img}
@@ -74,11 +80,14 @@ export default function Home() {
                 <div className="absolute inset-0  font-sans md:w-[40%] w-[60%] lg:top-20 lg:left-20 top-15 left-8 text-white">
                   <h2 className="lg:text-lg">{h2}</h2>
                   <h1 className=" text-5xl font-bold leading-15">{h1}</h1>
-                  <h3 className="lg:text-lg mt-3">{h3}</h3>
+                  <h3 className="lg:text-lg mt-3 mb-5">{h3}</h3>
 
-                  <button className="self-start bg-white border border-white hover:bg-transparent hover:text-white transition-colors duration-300 text-black px-10 py-2 rounded-full mt-5">
+                  <NavLink
+                    to={link}
+                    className="self-start bg-white border border-white hover:bg-transparent hover:text-white transition-colors duration-300 text-black px-10 py-2 rounded-full"
+                  >
                     shop
-                  </button>
+                  </NavLink>
                 </div>
               </div>
             ))}

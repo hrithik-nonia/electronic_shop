@@ -1,6 +1,6 @@
 function ProductCard({ product }) {
   return (
-    <div className="w-[300px] h-[400px] shrink-0 border border-stone-200 cursor-pointer">
+    <div className="w-[300px] h-[400px] shrink-0 border border-stone-200">
       {/* image shows here */}
       <div className="aspect-square flex items-center justify-center p-8 bg-white relative">
         <img

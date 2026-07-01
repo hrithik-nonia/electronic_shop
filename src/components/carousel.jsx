@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import ban1 from "../assets/banner_img/ban-1.avif";
 import ban2 from "../assets/banner_img/ban-2.avif";
 import ban3 from "../assets/banner_img/ban-3.avif";
@@ -46,8 +47,10 @@ export default function AutoCarousel() {
             Get more for less on selected brands
           </p>
 
-          {/* CTA */}
-          <CommonBtn text={"shop now"} />
+          <NavLink to="/filter-by-category/All Products">
+            {/* CTA */}
+            <CommonBtn text={"shop now"} />
+          </NavLink>
         </div>
       </div>
 

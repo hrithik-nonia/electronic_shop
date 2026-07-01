@@ -65,7 +65,7 @@ export default function Home() {
     <>
       <section className="bg-gray-200 lg:pb-20">
         {/* carousel */}
-        <AutoCarousel />
+        <AutoCarousel title={"All Products"} />
 
         <section className="md:px-10">
           {/* section 1 */}
@@ -166,8 +166,9 @@ export default function Home() {
                 <p className="mt-3 text-sm text-stone-600">
                   Terms and conditions apply
                 </p>
-
-                <CommonBtn text={"shop"} />
+                <NavLink to="/filter-by-category/Computer">
+                  <CommonBtn text={"shop"} />
+                </NavLink>
               </div>
             </div>
           </section>
@@ -211,7 +212,9 @@ export default function Home() {
                   See product detail pages for availability.
                 </p>
 
-                <CommonBtn text={"shop"} />
+                <NavLink to="/filter-by-category/Drone & Camera">
+                  <CommonBtn text={"shop"} />
+                </NavLink>
               </div>
 
               {/* Right Image */}

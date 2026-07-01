@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Heart, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import ProductCard from "../components/product_card";
 
 const PRODUCTS = [
   {
@@ -130,53 +130,6 @@ function Dropdown({ label }) {
       {label}
       <ChevronDown className="w-4 h-4" />
     </button>
-  );
-}
-
-function ProductCard({ product }) {
-  const [liked, setLiked] = useState(product.liked);
-
-  return (
-    <div className="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col">
-      <div
-        className={`relative h-44 ${product.bg} flex items-center justify-center`}
-      >
-        <span
-          className={`absolute top-3 left-3 text-xs font-semibold px-2 py-1 rounded-md ${product.badgeColor}`}
-        >
-          {product.badge}
-        </span>
-        <button
-          onClick={() => setLiked(!liked)}
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center"
-        >
-          <Heart
-            className={`w-4 h-4 ${
-              liked ? "fill-red-500 text-red-500" : "text-gray-400"
-            }`}
-          />
-        </button>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="max-h-28 max-w-[70%] object-contain"
-        />
-      </div>
-
-      <div className="p-4 flex flex-col gap-1 flex-1">
-        <h3 className="text-sm font-semibold text-gray-900 leading-snug">
-          {product.name}
-        </h3>
-        <p className="text-xs text-gray-500">{product.subtitle}</p>
-        <p className="text-sm font-bold text-gray-900 mt-1">
-          ${product.price.toFixed(2)}
-        </p>
-
-        <button className="mt-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-full py-2 transition-colors">
-          Add to Cart
-        </button>
-      </div>
-    </div>
   );
 }
 

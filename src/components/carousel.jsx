@@ -8,7 +8,7 @@ import CommonBtn from "./common_btn";
 
 const slides = [ban1, ban2, ban3];
 
-export default function AutoCarousel() {
+export default function AutoCarousel({ title }) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function AutoCarousel() {
             Get more for less on selected brands
           </p>
 
-          <NavLink to="/filter-by-category/All Products">
+          <NavLink to={`/filter-by-category/${title}`}>
             {/* CTA */}
             <CommonBtn text={"shop now"} />
           </NavLink>

@@ -2,6 +2,7 @@ import CommonBtn from "./common_btn";
 import ProductCard from "./product_card";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Product_section({ title, fetchFn }) {
   const LIMIT = 10;
@@ -92,7 +93,9 @@ export default function Product_section({ title, fetchFn }) {
         </div>
 
         <div className="flex justify-center mt-10">
-          <CommonBtn text={"view all"} />
+          <NavLink to={`/filter-by-category/${title}`}>
+            <CommonBtn text={"view all"} />
+          </NavLink>
         </div>
       </section>
     </>

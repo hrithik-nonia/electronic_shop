@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import SideBarForCategoryProdeuc from "../components/side_bar_for_category_products";
 import { useParams } from "react-router-dom";
+import ProductCard from "../components/product_card";
 
 const products = [
   {
@@ -84,41 +85,6 @@ const products = [
     hasDot: false,
   },
 ];
-
-function ProductCard({ product }) {
-  return (
-    <div className="flex flex-col">
-      <div
-        className={`relative h-72 ${product.bg} flex items-center justify-center`}
-      >
-        {product.onSale && (
-          <span className="absolute top-4 left-4 bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-            SALE
-          </span>
-        )}
-        <img
-          src={product.image}
-          alt={product.name}
-          className="max-h-full max-w-[80%] object-contain"
-        />
-        {product.hasDot && (
-          <span className="absolute bottom-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-red-600" />
-        )}
-      </div>
-
-      <h3 className="text-gray-900 mt-4 leading-snug">{product.name}</h3>
-
-      <div className="mt-1 flex items-center gap-2">
-        {product.originalPrice && (
-          <span className="text-purple-700 line-through">
-            ${product.originalPrice.toFixed(2)}
-          </span>
-        )}
-        <span className="text-purple-700">${product.price.toFixed(2)}</span>
-      </div>
-    </div>
-  );
-}
 
 export default function ShowProductsByCategory() {
   const { category } = useParams();
